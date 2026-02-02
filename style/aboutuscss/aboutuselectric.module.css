@@ -1,0 +1,188 @@
+/* ---------------------- electric section ----------------------- */
+
+.title4 {
+  font-size: 24px;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
+.title2 {
+  font-size: 48px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.electric_sec {
+  padding: 100px 0;
+}
+.electric_header {
+  max-width: 672px;
+  width: 672px;
+  margin-bottom: 71px;
+}
+.electric_header > .title2 > span {
+  color: var(--header-color);
+}
+.electric_card {
+  max-width: 601px;
+  height: 320px;
+  margin-bottom: 32px;
+  transition: 0.3s ease;
+  box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.2), 0px 15px 40px rgba(0, 0, 0, 0.12);
+  border-radius: 16px;
+  border: none;
+}
+.electric_card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.28),
+    0px 20px 50px rgba(0, 0, 0, 0.18);
+}
+.electric_card_img {
+  max-width: 71px;
+}
+.electric_card_img > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.card_para {
+  font-size: 24px;
+  font-weight: 400;
+}
+.card_box {
+  max-width: 541px;
+  padding: 27.5px 30px;
+}
+.electic_img_wraper{
+  position: relative;
+}
+.electric_img {
+  max-width: 558px;
+  position: relative;
+  margin-left: auto;
+  height: 512px;
+  /* overflow: hidden; */
+}
+.electric_img > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.electric_sub_img {
+  max-width: 454px;
+  height: 540px;
+  position: absolute;
+ bottom: -390px;
+  left: -105px;
+  /* border: 16px solid var(--secondary-color);
+  border-radius: 25px; */
+}
+.electric_sub_img > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 14px;
+}
+.top_corner {
+  position: absolute;
+  background: transparent;
+  height: 30px;
+  width: 30px;
+  border-top-left-radius: 14px;
+  box-shadow: 0 -15px 0 white;
+  transform: rotate(-90deg);
+  top: 64.4%;
+  right: 93.8%;
+  z-index: 2;
+}
+.bottom_corner {
+  position: absolute;
+  background: transparent;
+  height: 30px;
+  width: 30px;
+  border-top-left-radius: 14px;
+  box-shadow: 0 -15px 0 white;
+  transform: rotate(-90deg);
+  top: 84.6%;
+  left: 62.8%;
+  z-index: 2;
+}
+.electric_col {
+  margin-bottom: auto;
+}
+.electric_card_title {
+  font-size: 32px;
+  color: var(--hover-color);
+  font-weight: 500;
+}
+
+
+/* ------------------ RESPONSIVE ------------------ */
+
+@media (max-width: 992px) {
+  .electric_sec {
+    padding: 70px 0;
+  }
+
+  .electric_header {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .electric_card {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .electric_img {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .electric_card {
+    height: auto;
+  }
+
+  .card_para {
+    font-size: 18px;
+  }
+
+  .electric_card_title {
+    font-size: 26px;
+  }
+
+  .electric_img {
+    height: auto;
+    max-width: 100%;
+  }
+
+  .electric_sub_img {
+    position: static;
+    max-width: 100%;
+    height: auto;
+    margin-top: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .electric_sec {
+    padding: 50px 0;
+  }
+
+  .electric_header > .title2 {
+    font-size: 24px;
+    line-height: 1.3;
+  }
+
+  .card_box {
+    padding: 20px;
+  }
+
+  .card_para {
+    font-size: 16px;
+  }
+
+  .electric_card_title {
+    font-size: 22px;
+  }
+}

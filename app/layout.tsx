@@ -1,6 +1,17 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
+import "aos/dist/aos.css";
+import "@fancyapps/ui/dist/fancybox/fancybox.css";
+import AOSProvider from "@/components/providers/AOSProvider";
+import Script from "next/script";
+import { poppins } from "./fonts/poppins";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+
 import "./globals.css";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,9 +36,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${poppins.variable} antialiased`}
+        style={{ fontFamily: "var(--font-poppins)" }}
       >
+      {/* AOS initializer */}
+        <AOSProvider/>
+
         {children}
+
+        {/* Bootstrap JS */}
+        <Script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );

@@ -1,0 +1,243 @@
+/* ------------------ approach section ---------------------- */
+
+.approach_sec {
+  padding: 100px 0 0;
+}
+.approach_sub_img {
+  max-width: 309px;
+  height: 328px;
+  border-radius: 16px;
+  position: relative;
+}
+.approach_sub_img > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+   position: relative;
+  transition: all 0.7s;
+  overflow: hidden;
+}
+.approach_sub_img:hover img{
+  transform: scale(1.05);
+}
+.approach_img {
+  max-width: 648px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.approach_img > img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+   object-fit: cover;
+   position: relative;
+  transition: all 0.7s;
+  overflow: hidden;
+}
+.approach_img:hover img{
+  transform: scale(1.05);
+}
+.approach_box {
+  display: flex;
+}
+.approach_card {
+  max-width: 315px;
+  height: 328px;
+  margin-right: 21px;
+  border-radius: 16px;
+   position: relative;
+  transition: all 0.35s ease;
+}
+.approach_card:hover{
+  transform: translateY(-12px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+  border-radius: 16px;
+}
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  object-fit: cover;
+}
+.icon {
+  width: 100%;
+  max-width: 64px;
+  height: auto;
+  object-fit: contain;
+}
+.title2 {
+  font-size: 48px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.title4 {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.card_img {
+  max-width: 81px;
+  width: 81px;
+  margin: 14px auto 18px;
+}
+.card_img > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.card_body {
+  max-width: 400px;
+  padding: 12px 24px;
+}
+.card_title {
+  font-size: 24px;
+  font-weight: 500;
+  max-width: 270px;
+  margin: 0;
+}
+.card_main_body{
+  padding: 0 15px 12px;
+}
+.card_main_title{
+  font-size: 32px;
+  font-weight: 500;
+  max-width: 270px;
+  margin: 0;
+}
+.card_text{
+  font-size: 16px;
+}
+.card_cont_img {
+  max-width: 37.5px;
+}
+.card_cont_img > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.card_sub_body {
+  padding: 14px 24px;
+}
+.approach_sub_card {
+  max-width: 312px;
+  width: 312px;
+  height: 315px;
+  margin-right: 24px;
+  border-radius: 16px !important;
+   position: relative;
+  transition: all 0.35s ease;
+}
+.card_sub_text{
+  font-size: 16px;
+}
+.approach_card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+.approach_card:hover::after {
+  border-color: var(--hover-color);
+}
+.approach_sub_card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+.approach_sub_card:hover{
+  transform: translateY(-12px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+  border-radius: 16px;
+}
+.approach_sub_card:hover::after {
+  border-color: var(--hover-color);
+}
+.approach_cont > .title2 {
+  margin: 8px 0 16px;
+  text-transform: capitalize;
+}
+.approach_cont > .title4 {
+  text-transform: capitalize ;
+
+}
+.approach_cont {
+  margin-bottom: 40px;
+  /* max-width: 645px;
+    margin-left: auto; */
+}
+.approach_cont > p {
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 16px;
+}
+.approach_cont > .title2 > span {
+  color: var(--header-color);
+}
+
+
+/* ------------------ RESPONSIVE ------------------ */
+
+@media (max-width: 992px) {
+  .approach_sec {
+    padding: 70px 0 0;
+  }
+
+  .approach_cont {
+    text-align: center;
+  }
+
+  .approach_cont > .title2 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .approach_card,
+  .approach_sub_card {
+    margin: 0 auto 24px;
+  }
+
+  .approach_sub_img {
+    margin: 0 auto 24px;
+  }
+
+  .approach_img {
+    margin-bottom: 32px;
+  }
+
+  .card_main_title {
+    font-size: 26px;
+  }
+
+  .card_title {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .approach_sec {
+    padding: 50px 0 0;
+  }
+
+  .approach_cont > .title2 {
+    font-size: 24px;
+    line-height: 1.3;
+  }
+
+  .approach_cont > p {
+    font-size: 14px;
+  }
+
+  .card_text,
+  .card_sub-text {
+    font-size: 14px;
+  }
+}
+

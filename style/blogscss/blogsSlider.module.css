@@ -1,0 +1,93 @@
+/* slider section */
+.sliderSec {
+  background: var(--card-color);
+  padding-bottom: 50px;
+}
+
+.sliderHeader {
+  text-align: center;
+}
+
+.sliderHeader :global(.title2) span {
+  color: var(--hover-color);
+}
+
+.sliderHeader :global(.title4) {
+  color: var(--pagination-color);
+  margin: 15px 0 50px;
+}
+
+/* Swiper */
+.swiper {
+  max-width: 100%;
+  height: 550px;
+}
+
+.swiperSlide {
+  max-width: 648px;
+  height: 100%;
+}
+
+.swiperSlide title{
+  font-size: 32px;
+}
+/* Card (reuse existing UI exactly) */
+.card {
+  background: var(--card-color);
+  border: none;
+
+}
+
+.cardImg {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 363px;
+  margin-bottom: 15px;
+}
+
+.cardImage {
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.cardArrow {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  width: 48px;
+  height: 48px;
+
+  background: #161617;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 1;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+/* Show arrow on hover */
+/* .cardImg:hover .cardArrow {
+  opacity: 1;
+  transform: translateY(0);
+} */
+/* ===== Responsive ===== */
+@media (max-width: 991px) {
+  .swiper {
+    height: auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .swiperSlide {
+    max-width: 100%;
+  }
+
+  .sliderHeader :global(.title4) {
+    margin-bottom: 30px;
+  }
+}

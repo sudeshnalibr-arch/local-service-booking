@@ -1,0 +1,121 @@
+/* IMAGE CARDS SECTION */
+.cardSection {
+  padding: 70px 0;
+}
+
+.cardWrapper {
+  width: 100%;
+}
+
+/* CARD */
+.imgCard {
+  position: relative;
+  height: 500px;
+  max-width: 426px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: var(--secondary-color);
+  transition: all ease 0.4s;
+  margin: 0 auto;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+/* Gradient overlay */
+.imgCard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.15),
+    transparent
+  );
+  transition: 0.4s ease;
+}
+
+/* Glass content */
+.cardContent {
+  position: relative;
+  height: 84px;
+  width: calc(100% - 20px);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.034);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: var(--secondary-color);
+  text-align: center;
+  margin: 10px;
+  z-index: 1;
+}
+
+/* Hover effects */
+.imgCard:hover {
+  transform: scale(1.03);
+}
+
+.imgCard:hover::before {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.85),
+    rgba(0, 0, 0, 0.35),
+    transparent
+  );
+}
+
+.cardContent h4 {
+  font-size: 20px;
+  font-weight: 600;
+  padding-top: 10px;
+}
+
+.cardContent p {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+/* -------- RESPONSIVE -------- */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .imgCard {
+    height: 420px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .cardSection {
+    padding: 50px 0;
+  }
+
+  .imgCard {
+    height: 380px;
+    max-width: 100%;
+  }
+
+  .cardContent {
+    height: auto;
+    padding: 10px 0;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .imgCard {
+    height: 320px;
+  }
+
+  .cardContent h4 {
+    font-size: 18px;
+  }
+
+  .cardContent p {
+    font-size: 14px;
+  }
+}
