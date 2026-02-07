@@ -1,0 +1,184 @@
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.choose-sec {
+  padding: 100px 0;
+  background: var(--choose-background);
+  position: relative;
+  z-index: 0;
+}
+
+.choose-sec::after {
+  content: '';
+  width: 100%;
+  height: 40%;
+  position: absolute;
+  bottom: 0;
+  background: var(--secondary-color);
+  z-index: -1;
+}
+
+.choose-header {
+  max-width: 700px;
+  width: 700px;
+}
+
+.choose-header>.title1 {
+  margin-bottom: 111px;
+  color: var(--secondary-color);
+  margin-left: auto;
+  max-width: 657px;
+  width: 657px;
+  font-size: 48px;
+  line-height: 1.3;
+  font-weight: 800;
+}
+
+.choose-header>.title1>span {
+  color: var(--primary-color);
+}
+
+.choose-card {
+  max-width: 530px;
+  height: 730px;
+  border-radius: 20px;
+  border: none;
+  position: relative;
+  transition: 0.5s all ease;
+  box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.2),
+    0px 15px 40px rgba(0, 0, 0, 0.12);
+  margin: 0 auto;
+}
+
+.choose-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.28),
+    0px 20px 50px rgba(0, 0, 0, 0.18);
+}
+
+.card-top {
+  max-width: 572px;
+  width: 100%;
+  height: 75px;
+  font-size: 20px;
+  text-align: center;
+  position: absolute;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  top: -8%;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--border-color);
+}
+
+.choose-card-body {
+  padding: 60px 17px;
+  height: 100%;
+}
+
+.choose-card-header {
+  text-align: center;
+  margin-bottom: 72px;
+}
+
+.choose-card-header>.title1>span {
+  font-size: 20px;
+  display: inline;
+}
+
+.choose-card-list {
+  margin: 0 auto;
+}
+
+.choose-card-list>li {
+  font-size: 20px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+.list-icon {
+  width: 24px;
+  margin: 0 31px 0 0;
+}
+
+.list-icon>img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.choose-card-btn {
+  text-align: center;
+}
+
+.choose-btn {
+  padding: 25px 45px;
+  border-radius: 8px;
+  background: var(--hover-color);
+  margin-top: 60px;
+  color: var(--secondary-color);
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  text-decoration: none;
+  transition: color 0.4s ease;
+  /* smooth text color transition */
+}
+
+/* Sliding pseudo-elements for hover effect */
+.choose-btn::before,
+.choose-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: var(--secondary-color);
+  z-index: -1;
+  transition: transform 0.4s ease;
+}
+
+.choose-btn::before {
+  left: 0;
+  transform: translateX(-100%);
+}
+
+.choose-btn::after {
+  right: 0;
+  transform: translateX(100%);
+}
+
+.choose-btn:hover::before {
+  transform: translateX(0);
+}
+
+.choose-btn:hover::after {
+  transform: translateX(0);
+}
+
+.choose-btn:hover {
+  color: var(--hover-color);
+  outline: 1px solid var(--hover-color);
+  z-index: 2;
+  /* ensure text is above sliding pseudo-elements */
+}
+
+.title1 span {
+  display: block;
+  margin-top: 8px;
+  color: #2f6bff;
+  font-weight: 800;
+}
+
+.title1 {
+  font-size: 48px;
+  line-height: 1.3;
+  font-weight: 800;
+  color: #1e1e1e;
+  margin-bottom: 22px;
+}
