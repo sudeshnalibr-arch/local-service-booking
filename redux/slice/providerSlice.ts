@@ -168,6 +168,10 @@ const providerSlice = createSlice({
     nextPage(state) {
       state.page += 1;
     },
+
+     clearSearchMode: (state) => {
+      state.searchMode = false;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -197,7 +201,8 @@ const providerSlice = createSlice({
 
       .addCase(searchProviders.pending, (state) => {
         state.loading = true;
-        state.searchMode = true;
+        state.searchMode = true; // 🔒 lock browsing
+        state.data = [];
         state.error = null;
       })
       .addCase(searchProviders.fulfilled, (state, action) => {
@@ -216,7 +221,7 @@ const providerSlice = createSlice({
   },
 });
 
-export const { resetProviders, nextPage } = providerSlice.actions;
+export const {clearSearchMode ,resetProviders, nextPage } = providerSlice.actions;
 export default providerSlice.reducer;
 
 

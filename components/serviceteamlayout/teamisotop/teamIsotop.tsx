@@ -1,10 +1,14 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "@/style/serviceteam/teamisotop.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { filterProviders, resetProviders, nextPage } from "@/redux/slice/providerSlice";
+import {
+  filterProviders,
+  resetProviders,
+  clearSearchMode,
+} from "@/redux/slice/providerSlice";
 import { RootState, AppDispatch } from "@/redux/store/store";
 import { SERVICE_ICONS, DEFAULT_ICON } from "../serviceicons/serviceIcons";
 import Link from "next/link";
@@ -18,41 +22,23 @@ export default function TeamIsotope({
   setActiveFilter: (id: number) => void;
 }) {
   const dispatch = useDispatch<AppDispatch>();
-
-  // 👈 plumber default
-
-  const { data, loading, page, hasMore, searchMode } = useSelector(
+  const { data, loading, searchMode } = useSelector(
     (state: RootState) => state.providers
   );
 
-  // INITIAL LOAD (Plumber)
+  // 🧠 LOAD CATEGORY DATA (only when NOT searching)
   useEffect(() => {
-  if (searchMode) return; // 🔒 don't interfere with search results
-    
-  dispatch(resetProviders());
+    if (searchMode) return;
 
-  dispatch(
-    filterProviders({
-      service_type: activeFilter,
-      location: "kolkata",
-      page: 1,
-    })
-  );
-}, [activeFilter, dispatch, searchMode]);
-
-
-  const handleLoadMore = () => {
-    if (loading || !hasMore) return;
-
-    // dispatch(nextPage());
+    dispatch(resetProviders());
     dispatch(
       filterProviders({
         service_type: activeFilter,
         location: "kolkata",
-        page: page + 1,
+        page: 1,
       })
     );
-  };
+  }, [activeFilter, dispatch, searchMode]);
 
   const categories = [
     { service_type: 1, service_type_name: "Plumber" },
@@ -62,17 +48,28 @@ export default function TeamIsotope({
   const getImageUrl = (path?: string) =>
     path ? `${BaseURL}${path}` : "/images/default-user.png";
 
+  const handleCategoryClick = (id: number) => {
+    dispatch(clearSearchMode()); // 🔓 unlock browsing
+    dispatch(resetProviders());  // 🔥 remove search data
+    setActiveFilter(id);
+  };
+
+
+  // const handleCategoryClick = (id: number) => {
+  //   dispatch(clearSearchMode()); // 🔥 unlock browsing
+  //   setActiveFilter(id);
+  // };
+
   return (
-    <section className={styles.isotopSec} data-aos="fade-up">
+    <section className={styles.isotopSec}>
       <div className="container">
-        
         {/* FILTER MENU */}
         <div className={styles.filterMenu}>
           {categories.map((item) => (
             <button
               key={item.service_type}
               className={activeFilter === item.service_type ? styles.active : ""}
-              onClick={() => setActiveFilter(item.service_type)}
+              onClick={() => handleCategoryClick(item.service_type)}
               type="button"
             >
               <figure className={styles.btnIcon}>
@@ -81,15 +78,17 @@ export default function TeamIsotope({
                   alt={item.service_type_name}
                 />
               </figure>
-              <span className={styles.label}>{item.service_type_name}</span>
+              <span className={styles.label}>
+                {item.service_type_name}
+              </span>
             </button>
           ))}
-
         </div>
-          <div className={styles.isotopHeader}>
-              <h3 className={styles.title3}>Available Consultation</h3>
-          </div>
-          
+
+        <div className={styles.isotopHeader}>
+          <h3 className={styles.title3}>Available Consultation</h3>
+        </div>
+
         {/* GRID */}
         <AnimatePresence mode="wait">
           <div className={styles.cardWrap}>
@@ -101,13 +100,16 @@ export default function TeamIsotope({
             >
               <div className="row g-4">
                 {data.map((provider) => (
-                  <div key={provider.id} className="col-xl-4 col-lg-4 col-md-6 col-12">
+                  <div
+                    key={provider.id}
+                    className="col-xl-4 col-lg-4 col-md-6 col-12"
+                  >
                     <motion.div
                       className={styles.card}
                       whileHover={{ y: -12 }}
                     >
                       <div className={styles.cardBody}>
-                        <h5> Professional {provider.service_type_name}</h5>
+                        <h5>Professional {provider.service_type_name}</h5>
                         <h6 className={styles.cardTitle}>{provider.name}</h6>
 
                         <div className={styles.cardImg}>
@@ -122,20 +124,9 @@ export default function TeamIsotope({
                           </div>
                         </div>
 
-                        <div className={styles.cardContent}>
-                          <p className={`${styles.hiddenText} ${styles.clamp3}`}>
-                            {provider.description}
-                          </p>
-
-                          <h4 className={`${styles.price} title4`}>
-                            ₹ {provider.fees}
-                          </h4>
-
-                          <p className={styles.hiddenText}>
-                            <i className="bi bi-geo-alt-fill"></i>{" "}
-                            {provider.location}
-                          </p>
-                        </div>
+                        <h4 className={`${styles.price} title4`}>
+                          ₹ {provider.fees}
+                        </h4>
                       </div>
                     </motion.div>
                   </div>
@@ -144,23 +135,6 @@ export default function TeamIsotope({
             </motion.div>
           </div>
         </AnimatePresence>
-
-        {/* LOAD MORE */}
-        {/* {data.length > 0 && (
-          <div className={styles.loadMoreWrap}>
-            <button
-              className={styles.loadMoreBtn}
-              onClick={handleLoadMore}
-              disabled={loading || !hasMore}
-            >
-              {loading
-                ? "Loading..."
-                : hasMore
-                ? "Load More"
-                : "no more" }
-            </button>
-          </div>
-        )} */}
 
         {!loading && data.length === 0 && <p>No providers found</p>}
       </div>
