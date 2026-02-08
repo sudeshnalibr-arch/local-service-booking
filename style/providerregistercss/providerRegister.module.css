@@ -1,0 +1,229 @@
+.wrapper {
+  min-height: 100vh;
+  background: #f5f8ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.card {
+  max-width: 1100px;
+  width: 100%;
+  background: #fff;
+  border-radius: 18px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+}
+
+/* IMAGE */
+.imageBox {
+  position: relative;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.75),
+    rgba(0,0,0,0.15)
+  );
+  color: #fff;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  backdrop-filter: blur(90px);
+  -webkit-backdrop-filter: blur(90px);
+  box-shadow: inset 0 0 40px rgba(255, 255, 255, 0.15);
+}
+
+.overlay h3 {
+  font-size: 25px;
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+.overlay p {
+  font-size: 16px;
+  margin-bottom: 25px;
+  line-height: 1.8;
+}
+
+.overlay ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 14px;
+}
+
+.blurCard {
+    width: 100%;
+    padding: 30px 30px 0 30px;
+    margin-bottom: 0;
+    border-radius: 30px;
+    background: rgba(75, 74, 74, 0.4);
+    text-align: left;
+  backdrop-filter: blur(90px);
+  -webkit-backdrop-filter: blur(90px);
+  box-shadow: inset 0 0 40px rgba(255, 255, 255, 0.15);
+}
+
+/* FORM */
+.formBox {
+  padding: 40px;
+}
+
+.logo {
+  font-weight: 700;
+  color: #2964ff;
+  margin-bottom: 16px;
+}
+
+.formBox h2 {
+  font-size: 26px;
+  margin-bottom: 6px;
+}
+
+.subText {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.googleBtn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  border: 1px solid #ddd;
+  padding: 12px;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.divider {
+  text-align: center;
+  margin: 15px 0;
+  color: #aaa;
+  font-size: 14px;
+}
+
+.form label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 14px;
+}
+
+.form input,
+.form select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.checkboxRow{
+    display: flex;
+}
+.checkbox {
+  font-size: 13px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+ white-space: normal;   
+ 
+}
+.checkbox input {
+    width: 10%;
+   margin: 0;
+  margin-top: 2px;           /* vertical alignment tweak */
+  flex-shrink: 0;          /* checkbox never shrinks */
+}
+
+
+.checkbox span {
+ color: #2964ff;
+  cursor: pointer;
+  display: inline;
+}
+
+.submitBtn {
+  width: 100%;
+  padding: 14px;
+  background: #000;
+  color: #fff;
+  border-radius: 10px;
+  border: none;
+  font-size: 15px;
+  margin-top: 16px;
+  cursor: pointer;
+}
+
+.loginText {
+  margin-top: 16px;
+  font-size: 13px;
+  text-align: center;
+}
+
+.loginText span {
+  color: #2964ff;
+  cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .card {
+    grid-template-columns: 1fr;
+  }
+
+  .imageBox {
+    height: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .formBox {
+    padding: 24px;
+  }
+
+  .overlay h3 {
+    font-size: 18px;
+  }
+
+  .row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* .overlay {
+  position: absolute;
+  inset: 0;
+  padding: 24px;
+  display: flex;
+  align-items: flex-end;
+ 
+
+} */
+
+

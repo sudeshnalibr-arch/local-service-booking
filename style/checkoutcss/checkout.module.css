@@ -1,0 +1,121 @@
+.checkout {
+  background: #f7f8fc;
+  min-height: 100vh;
+}
+
+/* HEADER */
+.header {
+  background: linear-gradient(135deg, #3f6df6, #7fa0ff);
+  padding: 60px 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.header h1 {
+  font-size: 36px;
+  margin-bottom: 6px;
+}
+
+/* LAYOUT */
+.container {
+  max-width: 1200px;
+  margin: -40px auto 0;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 24px;
+}
+
+/* CARDS */
+.card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  margin-bottom: 20px;
+}
+
+/* LEFT FORM */
+.left label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  display: block;
+  color: #555;
+}
+
+.left input {
+  width: 100%;
+  height: 44px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  padding: 0 12px;
+  margin-bottom: 16px;
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+}
+
+.row div {
+  flex: 1;
+}
+
+/* SERVICE */
+.service {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.service h4 {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+/* SUMMARY */
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 16px 0;
+}
+
+/* BUTTON */
+.payBtn {
+  width: 100%;
+  height: 48px;
+  border-radius: 10px;
+  background: #5f8dff;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.payBtn:hover {
+  background: #4b78f4;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  .header h1 {
+    font-size: 28px;
+  }
+}

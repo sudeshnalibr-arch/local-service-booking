@@ -9,8 +9,10 @@ import AOSProvider from "@/components/providers/AOSProvider";
 import Script from "next/script";
 import { poppins } from "./fonts/poppins";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import { Toaster } from "react-hot-toast";
 
 import "./globals.css";
+import ReduxProvider from "@/redux/reduxprovider/ReduxProvider";
 
 
 const geistSans = Geist({
@@ -42,8 +44,10 @@ export default function RootLayout({
       {/* AOS initializer */}
         <AOSProvider/>
 
-        {children}
-
+          <ReduxProvider>
+            {children}
+          </ReduxProvider>
+        <Toaster position="top-right" />
         {/* Bootstrap JS */}
         <Script
           src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
