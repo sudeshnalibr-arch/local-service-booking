@@ -20,7 +20,7 @@ const ServiceBanner = () => {
               </p>
 
               <div className={styles["banner-btn"]}>
-                <Link href="/check-availability" className={styles["primary-btn"]}>
+                <Link href="/check-availability" className={styles["primary-btn"]} style={{textDecoration:'none'}}>
                   Check Availability
                 </Link>
               </div>

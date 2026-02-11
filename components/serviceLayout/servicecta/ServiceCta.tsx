@@ -34,6 +34,7 @@ const CTA = () => {
             <p className={styles["cta-phone"]}>
               <span className={styles["phone-circle"]}>
                 {/* icon optional */}
+                <i className="fa-solid fa-phone" style={{color:'white'}}></i>
               </span>
               + 123 456 7890 <span>or</span>
             </p>

@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "@/style/servicedetails/electrician/electrician.module.css";
@@ -13,7 +14,7 @@ const ElectricianBanner = () => {
             <Image
               src="/images/electrician/Banner-Bulb-img.png"
               alt="Bulb"
-              width={180}
+              width={220}
               height={220}
               className={styles["bulb-img"]}
             />
@@ -24,7 +25,7 @@ const ElectricianBanner = () => {
           <div className={styles["hero-content"]}>
             <h1>Service Details</h1>
             <p>
-              <Link href="/">Home</Link> / Service Details
+              <Link href="/" style={{textDecoration:'none'}}>Home</Link> / Service Details
             </p>
           </div>
 

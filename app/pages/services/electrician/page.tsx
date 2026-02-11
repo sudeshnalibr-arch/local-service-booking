@@ -1,3 +1,4 @@
+// "use client";
 import ElectricianBanner from '@/components/servicedetails/electrician/electricianbanner/ElectricianBanner'
 import ElectricianContent from '@/components/servicedetails/electrician/electriciancontent/ElectricianContent'
 import React from 'react'

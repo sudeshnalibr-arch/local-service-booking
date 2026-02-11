@@ -31,7 +31,7 @@ export default function ElectricianContent() {
     const fetchEquipments = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:8000/serviceEquipment-api/by-service-type/?service_type=electrician"
+          "http://localhost:8000/serviceEquipment-api/by-service-type/?service_type=cleaner"
         );
 
         const data = res.data.equipments || [];

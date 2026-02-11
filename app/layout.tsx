@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 
@@ -11,6 +12,9 @@ import { poppins } from "./fonts/poppins";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 import "./globals.css";
+import { ReduxProvider } from "@/redux/providers/ReduxProvider";
+// import { store } from "@/redux/store/store";
+// import { Provider } from "react-redux";
 
 
 const geistSans = Geist({
@@ -42,7 +46,9 @@ export default function RootLayout({
       {/* AOS initializer */}
         <AOSProvider/>
 
-        {children}
+       <ReduxProvider>
+          {children}
+        </ReduxProvider>
 
         {/* Bootstrap JS */}
         <Script
