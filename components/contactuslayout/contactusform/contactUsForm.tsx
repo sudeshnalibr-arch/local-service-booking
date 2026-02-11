@@ -153,15 +153,29 @@ const ContactUsForm = () => {
                 <div className={styles.field}>
                     <input
                       type="text"
-                      name="phone"
-                      value={formData.phone}
+                      name="subject"
+                      value={formData.subject}
                         onChange={handleChange}
                       className={styles.inputField}
                       placeholder=" "   // IMPORTANT: single space
                       />
-                      <label className={styles.floatingLabel}>Phone Number</label>
+                      <label className={styles.floatingLabel}>Subject</label>
 
-                      {errors.phone && <small className={styles.error}>{errors.phone}</small>}
+                      {errors.subject && <small className={styles.error}>{errors.phone}</small>}
+                </div>
+
+                <div className={styles.field}>
+                    <input
+                      type="text"
+                      name="message"
+                      value={formData.message}
+                        onChange={handleChange}
+                      className={styles.inputField}
+                      placeholder=" "   // IMPORTANT: single space
+                      />
+                      <label className={styles.floatingLabel}>Message</label>
+
+                      {errors.message && <small className={styles.error}>{errors.message}</small>}
                 </div>
 
 
@@ -201,7 +215,7 @@ const ContactUsForm = () => {
 
           <div>
                <strong>Have any question?</strong>
-              <p>Free +91 (020)-9850</p>
+              <p>Free +912345678780</p>
             </div>
            </div>
 
@@ -209,7 +223,7 @@ const ContactUsForm = () => {
              <i className="fa fa-envelope"></i>
              <div>
                <strong>Write email</strong>
-               <p>helofixkart@gmail.com</p>
+               <p>localpro@gmail.com</p>
             </div>
            </div>
 
@@ -217,7 +231,8 @@ const ContactUsForm = () => {
              <i className="fa fa-location-dot"></i>
              <div>
                <strong>Visit anytime</strong>
-               <p>657 twin lakes Drive, Reno, NV 89523</p>
+               <p>2nd Floor, Sector V, Salt Lake, Kolkata – 700091, West
+                  Bengal, India</p>
             </div>
            </div>
          </div>

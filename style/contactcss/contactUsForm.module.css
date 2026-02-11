@@ -146,7 +146,7 @@
 .inputField {
   width: 100%;
   height: 72px;
-  padding: 26px 20px 25px; /* space for label */
+  padding: 20px 20px 20px; /* space for label */
   font-size: 15px;
   outline: none;
   border: 2px solid #7da2ff;
@@ -156,13 +156,13 @@
 /* LABEL */
 .floatingLabel {
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 20px;
-  transform: translateY(-50%);
+  transform: translateY(-60%);
   font-size: 14px;
   color: #555;
   background: #fff;
-  padding: 0 6px;
+  padding: 0px 6px;
   pointer-events: none;
   transition: 0.3s ease;
 }

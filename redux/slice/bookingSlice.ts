@@ -1,42 +1,40 @@
-// src/redux/slices/bookingSlice.ts
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface BookingState {
-  selectedProvider: any | null;
-  selectedDate: string | null;
-  totalPrice: number;
+  provider: any | null;
+  date: string | null;
+  time: string | null;
+  totalAmount?: number;
 }
 
 const initialState: BookingState = {
-  selectedProvider: null,
-  selectedDate: null,
-  totalPrice: 0,
+  provider: null,
+  date: null,
+  time: null,
+   totalAmount: 0,
 };
 
 const bookingSlice = createSlice({
   name: "booking",
   initialState,
   reducers: {
-    setProvider(state, action: PayloadAction<any>) {
-      state.selectedProvider = action.payload;
+    setBooking: (state, action: PayloadAction<BookingState>) => {
+      state.provider = action.payload.provider;
+      state.date = action.payload.date;
+      state.time = action.payload.time;
+       if (action.payload.totalAmount !== undefined) {
+        state.totalAmount = action.payload.totalAmount;
+       }
     },
-    setDate(state, action: PayloadAction<string>) {
-      state.selectedDate = action.payload;
-    },
-    setTotalPrice(state, action: PayloadAction<number>) {
-      state.totalPrice = action.payload;
-    },
-    resetBooking() {
-      return initialState;
+
+    clearBooking: (state) => {
+      state.provider = null;
+      state.date = null;
+      state.time = null;
+      state.totalAmount=0;
     },
   },
 });
 
-export const {
-  setProvider,
-  setDate,
-  setTotalPrice,
-  resetBooking,
-} = bookingSlice.actions;
-
+export const { setBooking, clearBooking } = bookingSlice.actions;
 export default bookingSlice.reducer;

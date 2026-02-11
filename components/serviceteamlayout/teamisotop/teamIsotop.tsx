@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "@/style/serviceteam/teamisotop.module.css";
 import { useDispatch, useSelector } from "react-redux";
@@ -11,8 +11,10 @@ import {
 } from "@/redux/slice/providerSlice";
 import { RootState, AppDispatch } from "@/redux/store/store";
 import { SERVICE_ICONS, DEFAULT_ICON } from "../serviceicons/serviceIcons";
-import Link from "next/link";
+
 import { BaseURL } from "@/api/axios/axios";
+import AvailabilityModal from "../teammodal/AvailabilityModal";
+import axios from "axios";
 
 export default function TeamIsotope({
   activeFilter,
@@ -25,6 +27,16 @@ export default function TeamIsotope({
   const { data, loading, searchMode } = useSelector(
     (state: RootState) => state.providers
   );
+
+  const [showModal, setShowModal] = useState(false);
+  const [selectedProvider, setSelectedProvider] = useState<any>(null);
+    const [categories, setCategories] = useState([]);
+    console.log("categories", categories)
+
+  const handleCartClick = (provider: any) => {
+    setSelectedProvider(provider);
+    setShowModal(true);
+  };
 
   // 🧠 LOAD CATEGORY DATA (only when NOT searching)
   useEffect(() => {
@@ -40,10 +52,36 @@ export default function TeamIsotope({
     );
   }, [activeFilter, dispatch, searchMode]);
 
-  const categories = [
-    { service_type: 1, service_type_name: "Plumber" },
-    { service_type: 2, service_type_name: "Electrician" },
-  ];
+//  ============  category search =========================
+  type Category = {
+  id: number;               // or service_type
+  service_type_name: string;
+  };
+
+  useEffect(() => {
+    fetchCategories();
+  }, []);
+
+  const fetchCategories = async () => {
+    try {
+      
+      const res = await axios.get(
+        "http://localhost:8000/serviceType/list/"
+      );
+      setCategories(res.data.services); // adjust if API wraps data
+      
+    } catch (err) {
+      console.error("Failed to fetch categories", err);
+    } finally {
+      
+    }
+  }
+
+  // const categories = [
+  //   { service_type: 1, service_type_name: "Mechanic" },
+  //   { service_type: 2, service_type_name: "Electrician" },
+  //   { service_type: 3, service_type_name: "Plumber" }
+  // ];
 
   const getImageUrl = (path?: string) =>
     path ? `${BaseURL}${path}` : "/images/default-user.png";
@@ -67,19 +105,19 @@ export default function TeamIsotope({
         <div className={styles.filterMenu}>
           {categories.map((item) => (
             <button
-              key={item.service_type}
-              className={activeFilter === item.service_type ? styles.active : ""}
-              onClick={() => handleCategoryClick(item.service_type)}
+              key={item.id}
+              className={activeFilter === item.id ? styles.active : ""}
+              onClick={() => handleCategoryClick(item.id)}
               type="button"
             >
               <figure className={styles.btnIcon}>
                 <img
-                  src={SERVICE_ICONS[item.service_type] ?? DEFAULT_ICON}
-                  alt={item.service_type_name}
+                  src={SERVICE_ICONS[item.id] ?? DEFAULT_ICON}
+                  alt={item.name}
                 />
               </figure>
               <span className={styles.label}>
-                {item.service_type_name}
+                {item.name}
               </span>
             </button>
           ))}
@@ -109,7 +147,7 @@ export default function TeamIsotope({
                       whileHover={{ y: -12 }}
                     >
                       <div className={styles.cardBody}>
-                        <h5>Professional {provider.service_type_name}</h5>
+                        <h5>0{provider.id} Professional {provider.service_type_name}</h5>
                         <h6 className={styles.cardTitle}>{provider.name}</h6>
 
                         <div className={styles.cardImg}>
@@ -118,15 +156,26 @@ export default function TeamIsotope({
                             alt={provider.name}
                           />
                           <div className={styles.cartBox}>
-                            <Link href={`/pages/checkout/${provider.id}`}>
-                              <i className="bi bi-cart-fill"></i>
-                            </Link>
+                            <i
+                                className="bi bi-cart-fill"
+                                onClick={() => handleCartClick(provider)}
+                            ></i>
                           </div>
                         </div>
+                        <div className={styles.hiddenText}>
+                          <p className={styles.clamp3}>{provider.description}</p>
+                          <p>Experience: {provider.experience} years</p>
+                          <h4 className={`${styles.price} title4`}>
+                            ₹ {provider.fees}
+                          </h4>
+                          <p>
+                            <span className="catdIcon">
+                              <i className="bi bi-geo-alt-fill"></i>
+                            </span>
+                            {provider.location}
+                          </p>
 
-                        <h4 className={`${styles.price} title4`}>
-                          ₹ {provider.fees}
-                        </h4>
+                        </div>
                       </div>
                     </motion.div>
                   </div>
@@ -137,6 +186,13 @@ export default function TeamIsotope({
         </AnimatePresence>
 
         {!loading && data.length === 0 && <p>No providers found</p>}
+        {showModal && selectedProvider && (
+            <AvailabilityModal
+               provider={selectedProvider}
+               onClose={() => setShowModal(false)}
+            />
+        )}
+
       </div>
     </section>
   );

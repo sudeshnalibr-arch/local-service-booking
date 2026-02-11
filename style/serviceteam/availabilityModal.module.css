@@ -1,0 +1,132 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  width: 100%;
+  max-width: 420px;
+}
+
+.title {
+  margin-bottom: 16px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.timeGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.timeCheckbox {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.timeCheckbox:hover {
+  border-color: #2563eb;
+}
+
+.hiddenInput {
+  display: none;
+}
+
+.timeLabel {
+  display: inline-block;
+  width: 100%;
+  padding: 6px 0;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.checked {
+  background: #2563eb;
+  color: #fff;
+}
+
+.confirmBtn {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  background: #2563eb;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.confirmBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+/* Tablets & small laptops */
+@media (max-width: 768px) {
+  .modal {
+    max-width: 90%;
+    padding: 20px;
+  }
+
+  .timeGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .title {
+    font-size: 16px;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 480px) {
+  .modal {
+    max-width: 95%;
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .timeGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .timeCheckbox {
+    padding: 8px;
+  }
+
+  .timeLabel {
+    font-size: 14px;
+    padding: 8px 0;
+  }
+
+  .confirmBtn {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+/* Very small screens (old phones) */
+@media (max-width: 360px) {
+  .timeGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .title {
+    font-size: 15px;
+  }
+}

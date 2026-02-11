@@ -5,13 +5,17 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useRouter } from "next/navigation";
 import styles from "@/style/paymentcss/payment.module.css";
 import Image from "next/image";
+import { useDispatch, useSelector } from "react-redux";
+import { setBooking } from "@/redux/slice/bookingSlice";
 
 export default function PaymentPage() {
   const [success, setSuccess] = useState(false);
   const [paymentType, setPaymentType] = useState("");
   const [termsAccepted, setTermsAccepted] = useState(false);
   const [errors, setErrors] = useState<{ payment?: string; terms?: string }>({});
+  const { provider, date, time, totalAmount } = useSelector((state: RootState) => state.booking);
   const router = useRouter();
+  const dispatch = useDispatch()
 
   // Redirect after success
   useEffect(() => {
@@ -23,6 +27,16 @@ export default function PaymentPage() {
       return () => clearTimeout(timer);
     }
   }, [success, router]);
+
+  dispatch(
+  setBooking({
+    provider,
+    date,
+    time,
+    totalAmount,
+  })
+);
+
 
   const handleSubmit = () => {
     const newErrors: typeof errors = {};
@@ -46,7 +60,7 @@ export default function PaymentPage() {
       // trigger payment flow / modal
     }
   };
-
+  let amtToPay = totalAmount+129+100
 
   return (
     <>
@@ -60,11 +74,11 @@ export default function PaymentPage() {
             <ul>
               <li>
                 <span>Item total</span>
-                <span>₹ 2,694</span>
+                <span>₹ {totalAmount}</span>
               </li>
               <li>
                 <span>Tip</span>
-                <span>₹ 0</span>
+                <span>₹ 100</span>
               </li>
               <li>
                 <span>Taxes and Fee</span>
@@ -74,7 +88,7 @@ export default function PaymentPage() {
 
             <div className={styles.total}>
               <span>Amount to pay</span>
-              <span>₹ 2,823</span>
+              <span>₹ {amtToPay}</span>
             </div>
           </div>
 

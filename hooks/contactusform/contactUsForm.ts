@@ -1,13 +1,14 @@
 import { useState } from "react";
 import AxiosInstance from "@/api/axios/axios";
-// import { CONTACT_ENDPOINTS } from "@/api/endpoints/endPoints";
+ import { CONTACT_ENDPOINTS } from "@/api/endpoints/endPoints";
 import toast from "react-hot-toast";
 
 export const useContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    phone: "",
+    subject: "",
+    message: "",
     terms: false,
   });
 
@@ -28,7 +29,8 @@ export const useContactForm = () => {
 
     if (!formData.name.trim()) newErrors.name = "Name is required";
     if (!formData.email.trim()) newErrors.email = "Email is required";
-    if (!formData.phone.trim()) newErrors.phone = "Phone is required";
+    if (!formData.subject.trim()) newErrors.subject = "Subject is required";
+    if(!formData.message.trim()) newErrors.message = "Send your message";
     if (!formData.terms) newErrors.terms = "Accept terms to continue";
 
     setErrors(newErrors);
@@ -40,14 +42,15 @@ export const useContactForm = () => {
 
     setLoading(true);
     try {
-      await AxiosInstance.post(CONTACT_ENDPOINTS.CONTACT_US, {
-        name: formData.name,
+      await AxiosInstance.post(CONTACT_ENDPOINTS.CONTACT, {
+        full_name: formData.name,
         email: formData.email,
-        phone: formData.phone,
+        subject: formData.subject,
+        message: formData.message,
       });
 
       toast.success("Message sent successfully!");
-      setFormData({ name: "", email: "", phone: "", terms: false });
+      setFormData({ name: "", email: "", subject: "", message:"", terms: false });
       setErrors({});
     } catch (error: any) {
       toast.error(

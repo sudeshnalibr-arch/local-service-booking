@@ -13,10 +13,11 @@ export default function ContactUsContact() {
       </p>
 
       <div className={styles.details}>
-        <p>+91 428-9824</p>
-        <p>hellofixkart@gmail.com</p>
-        <p>657 Twin Lakes Drive, Reno, NV 89523</p>
-        <p>We open at 09:00 a.m – 18:00 p.m on weekdays.</p>
+        <p>+912345678780</p>
+        <p>localpro@gmail.com</p>
+        <p>2nd Floor, Sector V, Salt Lake, Kolkata – 700091, West
+                  Bengal, India</p>
+        <p>We open at 09:00 a.m – 06:00 p.m on weekdays.</p>
       </div>
     </section>
   );

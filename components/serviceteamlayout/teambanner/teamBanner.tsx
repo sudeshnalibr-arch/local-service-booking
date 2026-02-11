@@ -53,64 +53,69 @@ export default function TeamBanner({ activeFilter }: { activeFilter: number }) {
           <h1 className="title1">
             Find Your <span>Consultation</span>
           </h1>
-
+          <p className="title5 ">Find The Best Consultation</p>
           <div className={styles.bannerForm}>
-            {/* DATE & TIME */}
-            <div style={{ display: "inline-flex", alignItems: "center" }}>
-              <DateTime
-                key={dateKey}
-                 value={selectedDateTime ?? undefined}
-                 onChange={(value) => {
+            <div className={styles.bannerSearch}>
+                {/* DATE & TIME */}
+              <div className={styles.dateTime} style={{ display: "inline-flex", 
+                alignItems: "center",background: "#fff",borderRadius: "6px" }}>
+                
+                 <DateTime
+                  key={dateKey}
+                  value={selectedDateTime ?? undefined}
+                  onChange={(value) => {
                   if (moment.isMoment(value)) {
                   setSelectedDateTime(value); // 🔥 store full date+time
                   }
-                }}
+                  }}
                   dateFormat="YYYY-MM-DD"
                   timeFormat="hh:mm A"
                   inputProps={{
                   placeholder: "Select date & time",
                   readOnly: true,
                   }}
+                  className={styles.dateInput}
                 />
-
-              <button
+                <button
                 type="button"
                 onClick={() => dateInputRef.current?.focus()}
-                style={{ marginLeft: "0.5rem" }}
-              >
-                <i className="bi bi-calendar-event"></i>
-              </button>
-            </div>
+                style={{ marginLeft: "0.3rem" }}
+                >
+                  <i className="bi bi-calendar-event"></i>
+                </button>
+              </div>
 
-            {/* FEES */}
-            <div style={{ display: "inline-flex", alignItems: "center" }}>
-              <input
-                type="number"
-                placeholder="Min Fee"
-                value={minFee}
-                onChange={(e) =>
-                  setMinFee(e.target.value === "" ? "" : Number(e.target.value))
-                }
-              />
+                  {/* FEES */}
+                  <div style={{ display: "inline-flex", alignItems: "center", gap: "15px" }}>
+                    <div className={styles.maxmin}>
+                      <input
+                        type="number"
+                        placeholder="Min Fee"
+                        value={minFee}
+                          onChange={(e) =>
+                          setMinFee(e.target.value === "" ? "" : Number(e.target.value))
+                          }
+                      />
 
-              <input
-                type="number"
-                placeholder="Max Fee"
-                value={maxFee}
-                onChange={(e) =>
-                  setMaxFee(e.target.value === "" ? "" : Number(e.target.value))
-                }
-              />
-
-              <button type="button" 
-              onClick={handleSearch}
-              disabled={!selectedDateTime && minFee === "" && maxFee === ""}
-              >
-                <i className="fa-solid fa-magnifying-glass"></i>
-              </button>
+                      <input
+                        type="number"
+                        placeholder="Max Fee"
+                        value={maxFee}
+                        onChange={(e) =>
+                          setMaxFee(e.target.value === "" ? "" : Number(e.target.value))
+                        }
+                      />
+                    </div>
+                    <button type="button" 
+                      onClick={handleSearch}
+                      disabled={!selectedDateTime && minFee === "" && maxFee === ""}
+                    >
+                      <i className="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                  </div>
+                </div>
             </div>
           </div>
-        </div>
       </div>
     </section>
   );

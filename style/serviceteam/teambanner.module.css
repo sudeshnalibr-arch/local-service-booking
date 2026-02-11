@@ -14,7 +14,7 @@
   font-size: 400;
 }
 .bannerSec {
-  padding: 60px 0;
+  padding: 60px 0 30px 0;
 }
 
 .bannerCont {
@@ -23,7 +23,8 @@
 
 .bannerCont :global(.title5) {
   color: var(--social-color);
-  margin: 24px 0 70px;
+  margin: 10px 0 10px;
+  font-size: 22px;
   
 }
 
@@ -36,6 +37,7 @@
 /* Search container */
 .bannerForm {
   position: relative;
+ 
 }
 
 .bannerSearch {
@@ -46,17 +48,38 @@
   background: var(--serach-color);
   margin: 0 auto;
   display: flex;
+  justify-content: center;
+ 
   align-items: center;
-  gap: 14px;
+  gap: 20px;
   transition: box-shadow 0.3s ease, transform 0.2s ease;
 }
 
 /* focus animation */
-.bannerSearch:focus-within {
+/* .bannerSearch:focus-within {
   box-shadow: 0 0 0 2px var(--hover-color);
   transform: translateY(-2px);
-}
+} */
 
+/* .dateTime{
+  box-shadow: 0 0 0 2px var(--hover-color);
+  transform: translateY(-2px);
+  
+} */
+
+ .maxmin{
+  height: 35px;
+  border-radius: 6px;
+  background-color: #fff;
+  padding: 5px;
+  display: flex;
+  gap: 10px;
+  
+ }
+
+.dateInput{
+  border: none;
+}
 .bannerInputSearch {
   flex: 1;
   background: transparent;

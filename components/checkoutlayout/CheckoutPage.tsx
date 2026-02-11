@@ -3,27 +3,55 @@
 import styles from "@/style/checkoutcss/checkout.module.css";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "@/redux/store/store";
+import { BaseURL } from "@/api/axios/axios";
+import moment from "moment";
+import { setBooking } from "@/redux/slice/bookingSlice";
 
-type Props = {
-  serviceId: string;
-};
+// type Props = {
+//   serviceId: string;
+// };
 
-export default function CheckoutPage({ serviceId }: Props) {
+export default function CheckoutPage() {
   // Mock data – replace with API call using serviceId
   const router = useRouter()
-  const service = {
-    title: "Professional Bathroom Cleaner",
-    provider: "Urban Expert",
-    price: 1449,
-    location: "Kolkata",
-    
-    slot: " 05-02-2026   9:00 AM - 10:00 AM",
-  };
 
+  const { provider, date, time } = useSelector(
+    (state: RootState) => state.booking
+  );
+
+  const SERVICE_FEE = 129;
+  const totalAmount = Number(provider.fees) + SERVICE_FEE;
+  const dispatch = useDispatch()
+  dispatch(
+  setBooking({
+    provider,
+    date,
+    time,
+    totalAmount,
+  })
+);
+
+
+  if (!provider) return <p>No booking selected</p>;
+
+  // const service = {
+  //   title: "Professional Bathroom Cleaner",
+  //   provider: "Urban Expert",
+  //   price: 1449,
+  //   location: "Kolkata",
+    
+  //   slot: " 05-02-2026   9:00 AM - 10:00 AM",
+  // };
+  const getImageUrl = (path?: string) =>
+      path ? `${BaseURL}${path}` : "/images/default-user.png";
   const proceedPay= () => {
      router.push("/pages/payment")
   }
 
+  
+   
   return (
     <section className={styles.checkout}>
       {/* HEADER */}
@@ -58,7 +86,19 @@ export default function CheckoutPage({ serviceId }: Props) {
             <input type="text" />
 
             <label>Slot</label>
-            <input type="text" value={service.slot} readOnly />
+            
+
+            <input
+              type="text"
+              value={
+              date && time
+                ? `${moment(date).format("DD MMM YYYY")}  •  ${time}`
+                : ""
+              }
+              readOnly
+              placeholder="Booking date & time"
+            />
+
           </div>
         </div>
 
@@ -68,31 +108,34 @@ export default function CheckoutPage({ serviceId }: Props) {
             <h3>Service details</h3>
 
             <div className={styles.service}>
-              <div>
+              
                 <div className={styles.providerImage}>
-                    <Image
-                        src={"/images/teamservice/cleaner1.png"}   // example: "/images/providers/plumber1.png"
-                         alt={"plumber"}
-                            width={120}
-                            height={120}
-                            className={styles.image}
-                            priority
+                    <img
+                        src={getImageUrl(provider.image)}
+                        alt={provider.name}
                      />
-                </div>
-                <h4>{service.title}</h4>
-                <p>{service.provider}</p>
-                <p>{service.location}</p>
-              </div>
-              <span>₹ {service.price}</span>
+                  </div>
+                  <div className={styles.content}>
+                    
+                        <h4>{provider.name}</h4>
+                      <div className={styles.spInfo}>
+                          <p>Professional {provider.service_type_name}</p>
+                          <p>₹{provider.fees}</p>
+                      </div>
+                        
+                  <div>
+              
+            </div>
+                
+                  </div>
             </div>
           </div>
-
           <div className={styles.card}>
             <h3>Payment summary</h3>
 
             <div className={styles.summaryRow}>
               <span>Item total</span>
-              <span>₹ {service.price}</span>
+              <span>₹ {provider.fees}</span>
             </div>
 
             <div className={styles.summaryRow}>
@@ -102,7 +145,7 @@ export default function CheckoutPage({ serviceId }: Props) {
 
             <div className={styles.total}>
               <span>Amount to pay</span>
-              <span>₹ {service.price + 129}</span>
+              <span>₹ {totalAmount}</span>
             </div>
 
             <button onClick={()=>proceedPay()} className={styles.payBtn}>Proceed to pay</button>
