@@ -1,0 +1,388 @@
+.container {
+  max-width: 1350px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+/* ===== HERO / BANNER SECTION ===== */
+.hero-section {
+  width: 100%;
+  background: linear-gradient(90deg, #4f78ff, #6b8dff);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  margin-top: 20px;
+}
+
+.hero-main {
+  height: 403px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* ===== BULB ===== */
+.bulb-wrapper {
+  max-width: 400px;
+  position: relative;
+}
+
+.bulb-wrapper>img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+
+.light-beam {
+  position: absolute;
+  top: 50%;
+  left: 56%;
+  transform: translateX(-50%);
+  width: 280px;
+  z-index: -1;
+}
+
+/* ===== CONTENT ===== */
+/* .hero-container{
+  margin-top: 400px;
+} */
+.hero-main {
+  margin-top: 190px;
+}
+
+.hero-content {
+  text-align: center;
+  color: #fff;
+  z-index: 3;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 65px;
+  font-weight: 500;
+  width: 479px;
+  margin: 142px auto 0;
+}
+
+.hero-content p {
+  font-size: 18px;
+}
+
+.hero-content a {
+  color: var(--secondary-color);
+}
+
+/* ===== WORKER ===== */
+.worker-wrapper {
+  max-width: 401px;
+  height: 350px;
+ position: relative;
+}
+.worker-wrapper::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -20px;
+  transform: translateX(-50%);
+  width: 420px;
+  height: 100px;
+  background: radial-gradient(
+    ellipse at bottom,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(47, 107, 255, 0.5) 25%,
+    rgba(255, 255, 255, 0.45) 45%,
+    rgba(255, 255, 255, 0.15) 65%,
+    transparent 75%
+  );
+  filter: blur(35px);
+  z-index: 1;
+}
+.worker-wrapper>img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ========= END BANNER SECTION ============= */
+
+@media screen and (max-width: 1330px) {
+  /* ---------- START HEADER SECTION ------------ */
+
+
+  /* ---------- END HEADER SECTION ------------ */
+  /* ---------- START BANNER SECTION ----------- */
+  .hero-main {
+    height: 380px;
+  }
+
+  .hero-content h1 {
+    font-size: 56px;
+  }
+
+  .bulb-img {
+    width: 180px;
+  }
+
+  .light-beam {
+    width: 250px;
+    height: 230px;
+    left: 50%;
+  }
+
+  .worker-img {
+    width: 330px;
+  }
+
+  /* ---------- END BANNER SECTION ----------- */
+  /* ----------- START SERVICE SECTION ------------ */
+  .service-main {
+    gap: 20px;
+  }
+
+  .left-panel,
+  .right-panel {
+    width: 380px;
+  }
+
+  .center-panel {
+    width: 500px;
+  }
+
+  .card-info h4 {
+    font-size: 20px;
+  }
+
+  .card-info p {
+    font-size: 16px;
+  }
+
+  .card-image img {
+    width: 110px;
+  }
+
+}
+
+@media screen and (max-width: 1200px) {
+  .hero-main {
+    height: 360px;
+  }
+
+  .hero-content h1 {
+    font-size: 40px;
+  }
+
+  .bulb-wrapper {
+    left: 20px;
+
+  }
+
+  .bulb-img {
+    width: 160px;
+  }
+
+  .light-beam {
+    width: 220px;
+    height: 210px;
+  }
+
+  .worker-img {
+    width: 300px;
+  }
+
+  .worker-wrapper>img {
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+  }
+
+  /* ------- END BANNER SECTION ------------ */
+  /* ------- START SERVICE SECTION ------------ */
+  .service-main {
+    gap: 16px;
+  }
+
+  .panel-title::after {
+    display: none;
+  }
+
+  .left-panel,
+  .right-panel {
+    max-width: 380px;
+    height: auto;
+  }
+
+  .service-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .center-panel {
+    width: 420px;
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card-info h4 {
+    font-size: 18px;
+  }
+
+  .card-info p {
+    font-size: 15px;
+  }
+
+  .add-btn {
+    font-size: 16px;
+    left: 22px;
+  }
+
+
+}
+
+@media screen and (max-width: 991px) {
+  /* ---------- START HEADER SECTION ------------ */
+
+  /* ---------- END HEADER SECTION ----------- */
+  /* ----------- START BANNER SECTION ----------- */
+  .hero-section {
+    margin-top: -20px;
+  }
+
+  .hero-main {
+    height: auto;
+    min-height: 420px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 15px;
+    gap: 20px;
+  }
+
+  /* Bulb top */
+  .bulb-wrapper {
+    position: relative;
+    left: 0;
+    top: 0;
+    order: 1;
+    margin: 0 auto;
+  }
+
+
+  .light-beam {
+    width: 200px;
+    height: 190px;
+    top: 50%;
+    left: 46%;
+  }
+
+  /* Text center */
+  .hero-content {
+    order: 2;
+    text-align: center;
+    margin: 170px auto 70px;
+  }
+
+  .hero-content h1 {
+    font-size: 42px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+
+  /* Worker bottom */
+  .worker-wrapper {
+    margin: 0 auto 0;
+  }
+
+  .worker-img {
+    width: 250px;
+  }
+
+  /* ----------- END BANNER SECTION ----------- */
+  /* ----------- START SERVICE SECTION ----------- */
+
+  .service-page {
+    padding: 70px 0;
+  }
+
+  .service-main {
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .panel-title {
+    text-align: center;
+  }
+
+  .panel-title::after {
+    display: none;
+  }
+
+  .left-panel {
+    max-width: 380px;
+    margin-bottom: 30px;
+  }
+
+  .center-panel {
+    max-width: 500px;
+    margin-bottom: 30px;
+  }
+
+  .right-panel {
+    max-width: 380px;
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .service-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-item img {
+    width: 94px;
+  }
+
+  .service-card {
+    flex-direction: column;
+    gap: 12px;
+    padding-bottom: 30px;
+  }
+
+  .card-image {
+    align-self: center;
+  }
+
+  .add-btn {
+    margin-top: 8px;
+  }
+
+  .right-panel {
+    gap: 12px;
+  }
+
+
+  /* ----------- END SERVICE SECTION ----------- */
+  /* ------ START FOOTER SECTION ------ */
+
+  /* ------ END FOOTER SECTION ------ */
+
+}
+@media screen and (max-width:576px){
+  /* hero-sec */
+  .hero-section{
+    margin-top: -50px;
+  }
+ 
+}

@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 
@@ -12,7 +13,9 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import { Toaster } from "react-hot-toast";
 
 import "./globals.css";
-import ReduxProvider from "@/redux/reduxprovider/ReduxProvider";
+import { ReduxProvider } from "@/redux/providers/ReduxProvider";
+// import { store } from "@/redux/store/store";
+// import { Provider } from "react-redux";
 
 
 const geistSans = Geist({
@@ -44,10 +47,10 @@ export default function RootLayout({
       {/* AOS initializer */}
         <AOSProvider/>
 
-          <ReduxProvider>
-            {children}
-          </ReduxProvider>
-        <Toaster position="top-right" />
+       <ReduxProvider>
+          {children}
+        </ReduxProvider>
+
         {/* Bootstrap JS */}
         <Script
           src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
