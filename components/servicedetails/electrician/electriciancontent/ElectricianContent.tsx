@@ -76,7 +76,7 @@ export default function ElectricianContent() {
       <div className="service-main">
         {/* LEFT PANEL */}
         <div className="left-panel">
-          <h3 className="panel-title">Select a service</h3>
+          <h3 className="panel-title">Select an Equipment</h3>
 
           <div className="service-grid">
             {equipments.map((eq) => (
@@ -116,9 +116,9 @@ export default function ElectricianContent() {
                     ₹ {service.price} · 30 mins
                   </div>
 
-                  <a href="#" className="view-details">
+                  {/* <a href="#" className="view-details">
                     View Details
-                  </a>
+                  </a> */}
                 </div>
 
                 {/* RIGHT IMAGE */}
