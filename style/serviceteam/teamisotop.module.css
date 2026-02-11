@@ -1,0 +1,396 @@
+
+/* title */
+
+.title1{
+  font-size: 55px;
+  font-weight: 600;
+}
+.title3{
+  font-size: 27px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+.title5{
+  font-size: 22px;
+  font-size: 400;
+}
+.isotopSec {
+  padding: 100px 0;
+}
+
+/* HEADER */
+.isotopHeader {
+  margin: 40px 0 40px;
+  color: var(--primary-color);
+  padding-left: 10px;
+}
+
+.isotopHeader :global(.title5) {
+  margin-bottom: 40px;
+  color: var(--pagination-color);
+}
+
+/* FILTER MENU */
+.filterMenu {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 50px;
+  /* margin-top: 40px; */
+}
+
+.filterMenu button {
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  font-weight: 500;
+}
+
+.filterMenu button::before,
+.filterMenu button::after {
+  content: "";
+  position: absolute;
+  width: 51%;
+  height: 100%;
+  top: 0;
+  background: var(--hover-color);
+  transition: 0.4s;
+  z-index: 0;
+}
+
+.filterMenu button > * {
+  position: relative;
+  z-index: 2;
+}
+
+.filterMenu button::before {
+  left: -51%;
+}
+
+.filterMenu button::after {
+  right: -51%;
+}
+
+.active {
+  color: var(--secondary-color);
+}
+
+.filterMenu button.active {
+  color: var(--secondary-color);
+}
+
+.filterMenu button.active::before {
+  left: 0;
+}
+
+.filterMenu button.active::after {
+  right: 0;
+}
+.filterMenu button:hover::before {
+  left: 0;
+}
+
+.filterMenu button:hover::after {
+  right: 0;
+}
+.label {
+  position: relative;
+  z-index: 2;
+  white-space: nowrap;           /* 👈 prevents text wrapping */
+  line-height: 1;
+  color: var(--primary-color);
+  transition: color 0.3s ease;
+}
+
+
+/* .label {
+  position: relative;
+  z-index: 2;
+  color: var(--primary-color);
+  transition: color 0.3s ease;
+} */
+
+/* hover */
+.filterMenu button:hover .label {
+  color: #fff;
+}
+
+/* active */
+.filterMenu button.active .label {
+  color: #fff;
+}
+
+.btnIcon {
+    margin: 0;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;                /* 👈 prevents icon shrinking */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+}
+
+.btnIcon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* .btnIcon {
+  width: 24px;
+  margin-right: 10px;
+}
+
+.btnIcon img {
+  width: 100%;
+} */
+
+/* CARD */
+.card {
+  height: 480px;        /* normal height */
+  border-radius: 34px;
+  transition: box-shadow 0.4s ease;
+  background-color: #fff;
+  border-radius: 34px;
+  margin: 0 auto 20px;
+  border: 1px solid rgb(224, 221, 221);
+}
+
+.cardWrap {
+  height: 535px;        /* max hover height */
+  position: relative;
+}
+
+.card:hover {
+  background: linear-gradient(135deg, #4f7cff, #6fa8ff);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+}
+
+/* BODY */
+.cardBody {
+  padding: 24px;
+  position: relative;
+  height: 100%;
+}
+
+/* CONTENT */
+.cardContent {
+  max-width: 260px;
+}
+
+.cardTitle {
+  color: var(--primary-color);
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.card:hover .cardTitle {
+  color: #fff;
+}
+
+/* HIDDEN TEXT */
+/* .hiddenText {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.4s ease;
+}
+
+.card:hover .hiddenText {
+  opacity: 1;
+  transform: translateY(0);
+} */
+
+.hiddenText,
+.price {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.4s ease;
+  color: var(--secondary-color);
+}
+
+.card:hover .hiddenText,
+.card:hover .price {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* IMAGE */
+.cardImg {
+  height: 200;
+  width: 240;
+  margin-top: 24px;
+  border-radius: 17px;
+  overflow: hidden;
+}
+
+.cardImg img {
+  width: 100%;
+  object-fit: contain;
+}
+
+/* CART */
+.cartBox {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  background: var(--border-color);
+  padding: 8px;
+  border-radius: 10px;
+}
+
+/* BUTTON */
+.cardBtn {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  transform: rotate(-45deg);
+  transition: 0.4s ease;
+}
+
+
+.clamp3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;   /* number of lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+
+/* .cardBtn {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  transform: rotate(-45deg);
+  transition: 0.4s;
+} */
+
+.card:hover .cardBtn {
+  transform: rotate(0) scale(1.05);
+  background: var(--border-color);
+}
+
+.loadMoreBtn {
+  padding: 12px 28px;
+  border-radius: 8px;
+  background: #0f89ed;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: fixed;
+  z-index: 3;
+  bottom: 10px;
+  right: 10px;
+}
+
+.loadMoreBtn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* CARD
+.card {
+  max-width: 424px;
+  min-height: 528px;
+  border-radius: 34px;
+  margin: 0 auto 20px;
+  transition: 0.5s;
+}
+
+.card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(135deg, #4f7cff, #6fa8ff);
+}
+
+.cardBody {
+  padding: 24px;
+}
+
+.cardBtnCont {
+  display: flex;
+}
+
+.cardTitle {
+  color: var(--primary-color);
+}
+
+.card:hover .cardTitle {
+  color: #fff;
+}
+
+.card-body > p,
+.card-body > .title4 {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.card:hover .card-body > p,
+.card:hover .card-body > .title4 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cardImg {
+  position: relative;
+  margin-top: 20px;
+  border-radius: 17px;
+  overflow: hidden;
+}
+
+.cardImg img {
+  width: 100%;
+  border-radius: 17px;
+}
+
+.cartBox {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: var(--secondary-color);
+  padding: 6px 8px;
+  border-radius: 10px;
+} */
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .isotopSec {
+    padding: 60px 0;
+  }
+  .filterMenu {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .card {
+    margin-bottom: 12px;
+  }
+  
+}
+@media (max-width: 768px) {
+  
+}

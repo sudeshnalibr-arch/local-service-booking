@@ -10,6 +10,7 @@ import AOSProvider from "@/components/providers/AOSProvider";
 import Script from "next/script";
 import { poppins } from "./fonts/poppins";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import { Toaster } from "react-hot-toast";
 
 import "./globals.css";
 import { ReduxProvider } from "@/redux/providers/ReduxProvider";

@@ -21,6 +21,7 @@
   --offcanvsbckground-color: #c3d4ff;
    --card-color:#dde6ff;
    --pagination-color: #424242;
+   --serach-color:#E0E0E0;
 }
 .container {
   max-width: 1350px;

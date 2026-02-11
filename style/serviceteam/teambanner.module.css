@@ -1,0 +1,146 @@
+
+/* title */
+.title1{
+  font-size: 55px;
+  font-weight: 600;
+}
+.title3{
+  font-size: 27px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+.title5{
+  font-size: 22px;
+  font-size: 400;
+}
+.bannerSec {
+  padding: 60px 0;
+}
+
+.bannerCont {
+  text-align: center;
+}
+
+.bannerCont :global(.title5) {
+  color: var(--social-color);
+  margin: 24px 0 70px;
+  
+}
+
+.bannerCont :global(.title1) span {
+  color: var(--hover-color);
+  font-size: 55px;
+  font-weight: 600;
+}
+
+/* Search container */
+.bannerForm {
+  position: relative;
+}
+
+.bannerSearch {
+  padding: 0 20px;
+  max-width: 1028px;
+  height: 80px;
+  border-radius: 20px;
+  background: var(--serach-color);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+/* focus animation */
+.bannerSearch:focus-within {
+  box-shadow: 0 0 0 2px var(--hover-color);
+  transform: translateY(-2px);
+}
+
+.bannerInputSearch {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+/* icon buttons */
+.iconBtn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: inherit;
+}
+
+.iconBtn:hover {
+  color: var(--hover-color);
+}
+
+/* hide native date input */
+.hiddenDateInput {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* filter */
+.filterIcon {
+  width: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.filterIcon img {
+  width: 100%;
+}
+
+/* filter dropdown */
+.filterDropdown {
+  max-width: 300px;
+  background: #fff;
+  margin: 10px auto 0;
+  border-radius: 12px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.filterDropdown button {
+  background: transparent;
+  border: 1px solid var(--hover-color);
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.filterDropdown button:hover {
+  background: var(--hover-color);
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .bannerSearch {
+    height: auto;
+    padding: 14px;
+    border-radius: 14px;
+  }
+
+  .bannerInputSearch {
+    font-size: 14px;
+  }
+
+  .iconBtn {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bannerSearch {
+    flex-wrap: wrap;
+  }
+}

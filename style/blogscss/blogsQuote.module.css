@@ -72,13 +72,17 @@
 
 /* ===== Feedback ===== */
 .error {
-  color: #ffbaba;
+  color: #fc7f7f;
   text-align: center;
   margin-top: 20px;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .success {
-  color: #b6ffb6;
+  color: #5af55a;
+  font-size: 20px;
+  font-weight: 600;
   text-align: center;
   margin-top: 20px;
 }
