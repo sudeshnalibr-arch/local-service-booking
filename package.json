@@ -29,6 +29,7 @@
     "react-cookie": "^8.0.1",
     "react-datetime": "^3.3.1",
     "react-dom": "19.2.3",
+<<<<<<< HEAD
     "react-hook-form": "^7.71.1",
     "react-hot-toast": "^2.6.0",
     "react-icons": "^5.5.0",
@@ -36,6 +37,12 @@
     "sonner": "^2.0.7",
     "swiper": "^12.0.3",
     "yup": "^1.7.1"
+=======
+    "react-icons": "^5.5.0",
+    "react-redux": "^9.2.0",
+    "sonner": "^2.0.7",
+    "swiper": "^12.0.3"
+>>>>>>> bf03928c14e51593669954a9f449f6277bb20437
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
