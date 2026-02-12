@@ -1,0 +1,345 @@
+/* SECTION */
+.servicesSec {
+  background: var(--offcanvsbckground-color);
+  padding: 100px 0;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* HEADER */
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.title2 {
+  font-size: 55px;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* NAV BUTTONS */
+.navButtons {
+  display: flex;
+  gap: 14px;
+  bottom: -10%;
+}
+
+.navBtn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--hover-color);
+  color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  /* bottom: -20%; */
+}
+
+.navBtn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* SWIPER */
+.cardSwiper {
+  padding-bottom: 40px;
+}
+
+.cardSlide {
+  display: flex;
+  justify-content: center;
+}
+
+/* CARD */
+.servicesCard {
+  width: 312px;
+  height: 406px;
+  background: var(--offcanvsbckground-color);
+  transition: all 0.35s ease;
+}
+
+.servicesCard:hover {
+  height: 528px;
+  background: var(--secondary-color);
+  transform: translateY(-6px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.servicesCardBody {
+  padding: 24px 30px;
+  text-align: left;
+}
+
+/* ICONS */
+.servicesCardImg {
+  max-width: 78px;
+  margin-bottom: 24px;
+}
+
+.servicesSubImg {
+  max-width: 111px;
+  margin-bottom: 24px;
+}
+
+/* TEXT */
+.servicesCardTitle {
+  font-size: 36px;
+  margin-bottom: 10px;
+  max-width: 252px;
+}
+
+.servicesCardText {
+  font-size: 16px;
+  line-height: 26px;
+  max-width: 252px;
+}
+
+/* BUTTON */
+.servicesCardBtn {
+  max-width: 252px;
+  margin: 24px auto 0;
+  text-align: center;
+}
+
+.learnBtn {
+  width: 100%;
+  padding: 10px 0;
+  background: var(--hover-color);
+  color: var(--secondary-color);
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.servicesCard:hover .learnBtn {
+  opacity: 1;
+  transform: translateY(0);
+}
+.cardSwiper {
+  width: 100%;
+}
+
+
+
+/* added */
+/* HEADER RIGHT BUTTONS */
+
+.headerRight {
+  display: flex;
+  align-items: center;
+}
+
+.servicesBtn {
+  display: flex;
+  gap: 16px;
+}
+
+.homeBtn {
+  padding: 12px 32px;
+  border-radius: 8px;
+  outline: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+
+/* animated sliding background */
+.homeBtn::before,
+.homeBtn::after {
+  content: "";
+  position: absolute;
+  width: 51%;
+  height: 100%;
+  background: var(--hover-color);
+  top: 0;
+  z-index: -1;
+  transition: 0.3s ease;
+}
+
+.homeBtn::before {
+  left: -51%;
+}
+
+.homeBtn::after {
+  right: -51%;
+}
+
+.homeBtn:hover::before {
+  left: 0;
+}
+
+.homeBtn:hover::after {
+  right: 0;
+}
+
+.homeBtn:hover {
+  color: var(--secondary-color);
+  outline: none;
+}
+
+.active {
+  background: var(--hover-color);
+  color: var(--secondary-color);
+  outline: none;
+}
+
+.businessBtn {
+  margin-left: 8px;
+}
+
+
+
+
+/* added */
+/* mimic bootstrap row */
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+}
+
+.leftCol {
+  flex: 1;
+}
+
+.rightCol {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.servicesCont {
+  margin-bottom: 30px;
+}
+
+.title3 {
+  font-size: 32px;
+  font-weight: 500;
+}
+/* added */
+
+
+
+.servicesCardImg img,
+.servicesSubImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* swiper arrow positioning like original */
+
+.navButtons {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -70px;
+  gap: 40px;
+}
+
+/* hide swiper scrollbar completely */
+
+.cardSwiper .swiper-scrollbar,
+.cardSwiper .swiper-scrollbar-drag {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  opacity: 0 !important;
+}
+
+/* smoother hover animation */
+
+.servicesCard {
+  border-radius: 12px;
+  will-change: transform;
+}
+
+/* learn button animation polish */
+
+.learnBtn {
+  visibility: hidden;
+}
+
+.servicesCard:hover .learnBtn {
+  visibility: visible;
+}
+/* ===== NAVIGATION BELOW SWIPER ===== */
+
+.navWrapper {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.swiperPrev,
+.swiperNext {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background: var(--hover-color);
+  color: var(--secondary-color);
+  font-size: 22px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.swiperPrev:hover,
+.swiperNext:hover {
+  transform: scale(1.15);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* spacing consistency */
+
+/* .servicesSec {
+  position: relative;
+  overflow: hidden;
+} */
+
+/* responsive fixes */
+
+/* @media (max-width: 992px) {
+  .headerRow {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .navButtons {
+    position: static;
+    transform: none;
+    justify-content: center;
+    margin-top: 20px;
+  }
+} */
+/* 
+@media (max-width: 768px) {
+  .servicesCard {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .servicesCardTitle {
+    font-size: 28px;
+  }
+} */

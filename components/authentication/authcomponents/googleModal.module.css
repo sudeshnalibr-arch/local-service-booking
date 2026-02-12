@@ -1,0 +1,35 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: grid;
+  place-items: center;
+  z-index: 9999;
+}
+
+.modal {
+  width: 400px;
+  padding: 40px;
+  border-radius: 20px;
+  background: white;
+  text-align: center;
+}
+
+.googleBtn {
+  margin-top: 20px;
+  padding: 14px 20px;
+  width: 100%;
+  border-radius: 10px;
+  background: #4285f4;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.closeBtn {
+  margin-top: 10px;
+  background: transparent;
+  border: none;
+  color: #666;
+  cursor: pointer;
+}

@@ -1,0 +1,155 @@
+/* SECTION */
+.testimonialsSec {
+  padding: 100px 0 150px;
+  background: linear-gradient(
+    90deg,
+    #c5e3ff 0%,
+    #d9e8ff 50%,
+    #ffffff 100%
+  );
+}
+
+/* CONTAINER */
+.container {
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.testimonialsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* HEADER */
+.testimonialsHeader {
+  margin-bottom: 50px;
+}
+
+.title2 {
+  font-size: 55px;
+  font-weight: 600;
+}
+
+.title3 {
+  margin-top: 13px;
+  font-size: 32px;
+  font-weight: 500;
+}
+
+/* SWIPER */
+.mySwiper {
+  max-width: 1260px;
+  height: 650px;
+  border-radius: 8px;
+}
+
+/* SLIDE (DO NOT FIX WIDTH) */
+.swiperSlide {
+  display: flex;
+  justify-content: center;
+}
+
+/* CARD */
+.sliderCard {
+  width: 100%;
+  max-width: 1160px;
+  height: 567px;
+  border-radius: 8px;
+  background: var(--card-background-color);
+  padding: 10px;
+}
+
+/* IMAGE ROW */
+.cardImgCont {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* IMAGES */
+.cardTopImg {
+  max-width: 103px;
+  margin: 50px 0 0 27px;
+}
+
+.sliderCardImg {
+  max-width: 150px;
+  margin-top: 30px;
+}
+
+/* BODY */
+.cardBody {
+  text-align: center;
+  padding: 10px;
+}
+
+.cardTitle {
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.cardTitle p {
+  font-size: 20px;
+}
+
+/* TEXT */
+.cardText {
+  max-width: 1160px;
+  margin: 32px auto 56px;
+  font-size: 24px;
+  color: var(--text-color);
+}
+
+/* STARS */
+.starCard {
+  font-size: 35px;
+  color: var(--border-color);
+}
+
+.starCard span {
+  color: var(--offcanvsbckground-color);
+}
+
+/* RIGHT ICON */
+.cardCont {
+  display: flex;
+}
+
+.cardRightImg {
+  max-width: 103px;
+  margin: 0 20px 80px auto;
+}
+
+/* PAGINATION */
+:global(.swiper-pagination) {
+  bottom: -50px !important;
+}
+
+:global(.swiper-pagination-bullet) {
+  width: 20px;
+  height: 20px;
+  background: var(--pagination-color);
+  opacity: 1;
+}
+
+:global(.swiper-pagination-bullet-active) {
+  background: var(--hover-color);
+}
+
+/* REMOVE SCROLLBAR */
+:global(.mySwiper .swiper-scrollbar),
+:global(.mySwiper .swiper-scrollbar-drag) {
+  display: none !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .sliderCard {
+    height: auto;
+  }
+
+  .cardText {
+    font-size: 18px;
+  }
+}

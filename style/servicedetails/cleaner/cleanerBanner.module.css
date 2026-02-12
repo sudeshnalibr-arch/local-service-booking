@@ -731,6 +731,7 @@
   }
   .hero-section{
     padding: 100px 0 0;
+   
   }
   .hero-content h1 {
     font-size: 50px;
@@ -1792,3 +1793,22 @@
 }
 
 /* Fix for broken image paths in cleaners if any */
+
+
+
+
+
+
+/* added */
+/* ===== Banner Center Fix (do not modify existing styles) ===== */
+
+.hero-text-center {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+text-align: center;
+width: 100%;
+z-index: 5;
+}
+
