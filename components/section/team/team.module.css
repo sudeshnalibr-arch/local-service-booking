@@ -1,0 +1,158 @@
+/* SECTION */
+.teamSec {
+  background: #ffc85a;
+  padding: 100px 0;
+  position: relative;
+}
+
+.teamSec::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  height: 30%;
+  width: 100%;
+  background: #d9e4ff;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* HEADER */
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.title2 {
+  font-size: 55px;
+  font-weight: 600;
+}
+
+.title3 {
+  font-size: 32px;
+  opacity: 0.8;
+  font-weight : 500
+}
+
+.exploreBtn {
+  background: #ffffff;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+/* SWIPER */
+.teamSwiper {
+  width: 100%;
+  padding-bottom: 40px;
+}
+
+/* 🔥 REQUIRED FOR SMOOTH CONTINUOUS MOTION */
+:global(.teamSwiper .swiper-wrapper) {
+  transition-timing-function: linear !important;
+}
+
+/* SLIDE */
+.teamSlide {
+  width: auto !important;
+  display: flex;
+  justify-content: center;
+}
+
+/* CARD */
+.teamCard {
+  width: 260px;
+  height: 420px;
+  background: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: 0.4s ease;
+}
+
+.teamCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
+}
+
+/* IMAGE */
+.teamCardImg {
+  position: relative;
+  height: 250px;
+}
+
+.coverImg {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.teamCardImg:hover .coverImg {
+  transform: scale(1.08);
+}
+
+/* ICON */
+.teamIconCircle {
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid #2453e6;
+  position: absolute;
+  left: 50%;
+  bottom: -38px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* BODY */
+.teamCardBody {
+  padding: 56px 16px 20px;
+  text-align: center;
+}
+
+.teamCardBody h5 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.teamCardBody p {
+  font-size: 13px;
+  opacity: 0.75;
+  margin-bottom: 12px;
+}
+
+/* LINK */
+.viewBtn {
+  color: #2453e6;
+  font-size: 14px;
+  position: relative;
+}
+
+.viewBtn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: #2453e6;
+  transition: 0.4s;
+}
+
+.viewBtn:hover::after {
+  width: 100%;
+}
+
+/* REMOVE SCROLLBAR */
+:global(.teamSwiper .swiper-scrollbar),
+:global(.teamSwiper .swiper-scrollbar-drag) {
+  display: none !important;
+}
+

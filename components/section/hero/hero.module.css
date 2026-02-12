@@ -1,0 +1,122 @@
+.bannerSec {
+  position: relative;
+  margin-top: 100px;
+  overflow: hidden;
+}
+
+/* BLUE BACKGROUND SHAPE */
+.bannerBg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: #2962ff;
+  clip-path: polygon(54% 0, 100% 0, 100% 100%, 0 100%, 27% 48%);
+  z-index: -1;
+}
+
+/* FLEX WRAPPER (THIS IS THE KEY) */
+.heroWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 900px;
+}
+
+/* LEFT */
+.bannerContent {
+  max-width: 720px;
+}
+
+.title {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1.15;
+  color: #222;
+  margin-bottom: 30px;
+}
+
+.handUnderline {
+  position: relative;
+}
+
+.handUnderline::after {
+  content: "";
+  position: absolute;
+  left: 30%;
+  bottom: -14px;
+  width: 60%;
+  height: 20px;
+  background: url("/images/Vector 1 (1).png") no-repeat center / contain;
+}
+
+.desc {
+  font-size: 16px;
+  color: #444;
+  max-width: 650px;
+}
+
+/* BUTTONS */
+.bannerBtn {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.callBtn {
+  padding: 12px 26px;
+  background: #2962ff;
+  color: #fff;
+  border-radius: 8px;
+  margin-right: 24px;
+}
+
+.playBtn {
+  display: flex;
+  align-items: center;
+  color: #222;
+}
+
+.playIcon {
+  width: 60px;
+  height: 60px;
+  background: #ffc44d;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+}
+
+/* RIGHT */
+/* RIGHT */
+.bannerImage {
+  position: relative;
+  width: 50%;
+  height: 935px;              
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+/* IMAGE */
+.heroImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  
+       
+}
+
+
+/* YELLOW CIRCLE */
+.yellowCircle {
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  background: #ffc44d;
+  border-radius: 50%;
+  left: 0;
+  top: 190px;
+  z-index: -1;
+}

@@ -1,0 +1,89 @@
+.dialog {
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+}
+
+/* Panels */
+.left {
+  width: 50%;
+  height: 700px;
+  background: var(--secondary-color);
+  border-radius: 20px 0 0 20px;
+  padding: 60px;
+}
+
+.right {
+  width: 50%;
+  height: 700px;
+  background: linear-gradient(
+    to right,
+    #2b57ff,
+    #4a74ff,
+    #6f93ff,
+    #8fb0ff
+  );
+  border-radius: 0 20px 20px 0;
+  color: white;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Typography */
+.title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Form */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input {
+  height: 48px;
+  border-radius: 20px;
+  border: none;
+  padding-left: 20px;
+  background: var(--email-background-color);
+}
+
+/* Buttons */
+.primaryBtn {
+  margin-top: 20px;
+  padding: 14px;
+  border-radius: 20px;
+  border: none;
+  background: var(--hover-color);
+  color: white;
+  cursor: pointer;
+}
+
+.secondaryBtn {
+  margin-top: 20px;
+  padding: 14px;
+  border-radius: 20px;
+  border: none;
+  background: white;
+  color: #2b57ff;
+  cursor: pointer;
+}
+
+/* Social */
+.socialRow {
+  display: flex;
+  gap: 20px;
+}
+
+.socialBtn {
+  flex: 1;
+  height: 48px;
+  border-radius: 20px;
+  border: 1px solid #999;
+  background: transparent;
+  cursor: pointer;
+}

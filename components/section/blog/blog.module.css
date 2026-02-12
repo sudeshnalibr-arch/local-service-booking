@@ -1,0 +1,137 @@
+/* SECTION */
+.blogSec {
+  padding: 0 0 102px;
+  background: var(--offcanvsbckground-color);
+}
+
+/* CONTAINER */
+.container {
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* HEADER */
+.blogHeader {
+  margin-bottom: 48px;
+}
+
+/* SWIPER */
+.blogSwiper {
+  width: 100%;
+  height: 552px;
+}
+
+/* IMPORTANT: DO NOT FIX SLIDE WIDTH */
+.blogSlide {
+  display: flex;
+  justify-content: center;
+}
+
+/* CARD */
+.blogCard {
+  width: 512px;
+  height: 552px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  background-color: var(--secondary-color);
+
+}
+
+.blogCard:hover {
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.15);
+  transform: translateY(-6px);
+}
+
+/* IMAGE */
+.blogCardImg {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+}
+
+.coverImg {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.blogCardImg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.blogCard:hover .coverImg {
+  transform: scale(1.08);
+}
+
+.blogCard:hover .blogCardImg::after {
+  opacity: 1;
+}
+
+/* BODY */
+.cardBody {
+  padding: 16px;
+}
+
+/* TITLE + BOOKMARK */
+.blogCardBox {
+  display: flex;
+}
+
+.blogCardTitle {
+  max-width: 444px;
+  font-size: 24px;
+  margin: 15px 0 30px;
+  text-align: left;
+}
+
+/* BOOKMARK */
+.bookmark {
+  width: 17.5px;
+  height: 25.62px;
+  margin-top: 12px;
+  transition: height 0.3s ease;
+}
+
+.bookmark img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* AUTHOR */
+.blogImgBox {
+  display: flex;
+  align-items: center;
+}
+
+.blogImg {
+  width: 73px;
+  margin: 0;
+}
+
+.blogImgBox p {
+  font-size: 24px;
+  margin-left: auto;
+  max-width: 144px;
+}
+
+/* REMOVE SCROLLBAR */
+:global(.blogSwiper .swiper-scrollbar),
+:global(.blogSwiper .swiper-scrollbar-drag) {
+  display: none !important;
+}
+.title2 {
+  font-size: 55px;
+  font-weight: 600;
+}
+.title3 {
+  font-size: 32px;
+  font-weight: 500;
+}

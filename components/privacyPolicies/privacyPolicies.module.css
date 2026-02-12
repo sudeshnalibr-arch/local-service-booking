@@ -1,0 +1,141 @@
+/* ===== SECTION ===== */
+
+.termSec {
+  width: 100%;
+}
+
+/* ===== CONTAINER (Bootstrap replacement) ===== */
+
+.customContainer {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* ===== ROW (Bootstrap row replacement) ===== */
+
+.customRow {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+/* ===== COLUMNS ===== */
+
+.leftCol {
+  flex: 0 0 58%;
+}
+
+.rightCol {
+  flex: 0 0 38%;
+}
+
+/* ===== ORIGINAL DESIGN ===== */
+
+.termContainer {
+  margin-top: 220px !important;
+}
+
+.termHeader {
+  text-align: center;
+  margin: 24px auto 70px;
+}
+
+.termContLeft > .title4 {
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+
+.termLeftList {
+  padding-left: 20px;
+}
+
+.termLeftList > li {
+  list-style-type: decimal;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.termLeftList > li > p {
+  margin: 24px 0;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.listEmail {
+  display: flex;
+  color: var(--social-color);
+  align-items: center;
+}
+
+.listEmail > a {
+  font-size: 20px;
+  font-weight: 400;
+  margin-left: 15px;
+}
+
+.termRightCont {
+  border-left: 1px solid var(--primary-color);
+  padding-left: 30px;
+  margin-left: auto;
+  max-width: 478px;
+}
+
+.termRightCont > .title4 {
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: var(--hover-color);
+}
+
+.termRightList > li {
+  margin: 24px 0;
+  list-style-type: decimal;
+  color: var(--social-color);
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media screen and (max-width: 992px) {
+  .customRow {
+    flex-direction: column;
+  }
+
+  .leftCol,
+  .rightCol {
+    flex: 100%;
+  }
+
+  .termRightCont {
+    margin: 30px auto 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .title1 {
+    font-size: 36px !important;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .title1 {
+    font-size: 28px !important;
+  }
+
+  .title4 {
+    font-size: 18px !important;
+  }
+
+  .termLeftList > li,
+  .termRightList > li {
+    font-size: 16px;
+  }
+
+  .termLeftList > li > p {
+    font-size: 14px;
+  }
+
+  .listEmail > a {
+    font-size: 14px;
+  }
+}
