@@ -6,6 +6,7 @@ import authSlice from "../slice/authSlice";
 
 export const store = configureStore({
   reducer: {
+    checkout: checkoutReducer,
     providers: providerReducer,
     booking: bookingReducer,
      cart: cartReducer,
@@ -15,5 +16,18 @@ export const store = configureStore({
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
+
+// export const store = configureStore({
+//   reducer: {
+//     providers: providerReducer,
+//     // booking: bookingReducer,
+//     //  cart: cartReducer,
+//     checkout: checkoutReducer ,
+
+//   },
+// });
+
+// export type RootState = ReturnType<typeof store.getState>;
+// export type AppDispatch = typeof store.dispatch;
 
 // redux/store.ts
